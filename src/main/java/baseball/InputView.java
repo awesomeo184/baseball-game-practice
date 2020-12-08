@@ -25,8 +25,8 @@ public class InputView {
         return scanner.nextLine();
     }
 
-    public LinkedHashSet<Integer> getUserInput() {
-        LinkedHashSet<Integer> userInput = new LinkedHashSet<>();
+    public ArrayList<Integer> getUserInput() {
+        ArrayList<Integer> userInput = new ArrayList<>();
         for (int i = 0; i < VALID_LENGTH; i++) {
             userInput.add(Character.getNumericValue(preUserInput.charAt(i)));
         }
