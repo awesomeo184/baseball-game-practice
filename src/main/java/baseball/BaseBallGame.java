@@ -23,9 +23,10 @@ public class BaseBallGame {
 
         while (!rule.isThreeStrike()) {
             InputView inputView = new InputView(scanner);
+            rule.initializeBallCount();
             rule.judge(inputView.getUserInput());
+            rule.printResult();
         }
-
     }
 
     public ArrayList<Integer> createAnswer() {
