@@ -2,6 +2,7 @@ package baseball;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 
 public class InputView {
@@ -24,8 +25,8 @@ public class InputView {
         return scanner.nextLine();
     }
 
-    public ArrayList<Integer> getUserInput() {
-        ArrayList<Integer> userInput = new ArrayList<>();
+    public LinkedHashSet<Integer> getUserInput() {
+        LinkedHashSet<Integer> userInput = new LinkedHashSet<>();
         for (int i = 0; i < VALID_LENGTH; i++) {
             userInput.add(Character.getNumericValue(preUserInput.charAt(i)));
         }
