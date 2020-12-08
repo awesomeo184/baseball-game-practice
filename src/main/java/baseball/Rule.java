@@ -4,8 +4,13 @@ import java.util.ArrayList;
 
 
 public class Rule {
+
     private final ArrayList<Integer> answer;
     private static final int BALL_COUNT = 3;
+    private static final String NOTHING = "낫싱";
+    private static final String STRIKE = " 스트라이크";
+    private static final String BALL = " 볼";
+    private static final String THREE_STRIKE = "승리했습니다. 재시작은 1, 게임 종료는 2를 입력하세요: ";
     private int ball = 0;
     private int strike = 0;
 
@@ -35,15 +40,23 @@ public class Rule {
 
     public void printResult() {
         if (isNothing()) {
-            System.out.println("낫싱");
+            System.out.println(NOTHING);
             return;
         }
         if (isThreeStrike()) {
-            System.out.println("승리했습니다. 재시작은 1, 게임 종료는 2를 입력하세요: ");
+            System.out.println(THREE_STRIKE);
             return;
         }
-        System.out.println(ball + " 볼 " + strike + " 스트라이크");
 
+        if (ball == 0) {
+            System.out.println(strike + STRIKE);
+            return;
+        }
+        if (strike == 0) {
+            System.out.println(ball + BALL);
+            return;
+        }
+        System.out.println(ball + BALL + strike + STRIKE);
     }
 
     private boolean isNothing() {
